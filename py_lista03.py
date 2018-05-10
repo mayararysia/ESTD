@@ -25,12 +25,10 @@ def fat(n):
     return n * fat(n-1)
     
 #questão 02
-def inverte(palavra, invertida, i):
-  invertida += palavra[i]
-  if i == 0:
-    return invertida
-  else:
-    return inverte(palavra, invertida, i-1)
+def inverte(palavra):
+  if len(palavra) == 1:
+    return palavra
+  return inverte(palavra[1:]) + palavra[0]
   
 #questão 03
 def repetida(P, k, qtd, i):
@@ -90,15 +88,12 @@ def main():
   print("---")
   
   #02
-  P = input('Insira Uma Palavra: ')
-  tam = len(P)
-  tam = tam - 1
-  inversao = ""
-  print(P, "-->> ", inverte(P, inversao, tam))
+  palavra = input('Insira Uma Palavra: ')
+  print(P, "-->> ", inverte(palavra))
   
   #3
   k = input('Insira uma Letra: ')
-  print("A letra ", k, "aparece ",repetida(P, k, 0, tam), "vezes em ", P)
+  print("A letra ", k, "aparece ",repetida(palavra, k, 0, tam), "vezes em ", palavra)
 
   #4
   print("Número: ", num)
