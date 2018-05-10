@@ -89,7 +89,7 @@ def main():
   
   #02
   palavra = input('Insira Uma Palavra: ')
-  print(P, "-->> ", inverte(palavra))
+  print(palavra, "-->> ", inverte(palavra))
   
   #3
   k = input('Insira uma Letra: ')
